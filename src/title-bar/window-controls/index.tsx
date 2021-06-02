@@ -52,7 +52,7 @@ const WindowControls = ({
     >
       {
         buttons(isWin, maximized ?? false, onMinimize!, onMaximize!, onClose!)
-          .filter(x => !(disableMaximize && x.type == 'maximize' || disableMinimize && x.type == 'minimize') || disableClose && x.type == 'close'))
+          .filter(x => !(disableMaximize && x.type == 'maximize' || disableMinimize && x.type == 'minimize' || disableClose && x.type == 'close'))
           .map((b) => {
             return (
               <WindowButton
