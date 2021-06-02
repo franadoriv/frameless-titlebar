@@ -17,6 +17,7 @@ const TitleBar = ({
   onDoubleClick,
   disableMaximize,
   disableMinimize,
+  disableClose,
   platform,
   children,
   theme,
@@ -47,6 +48,7 @@ const TitleBar = ({
               focused={focused}
               disableMaximize={disableMaximize}
               disableMinimize={disableMinimize}
+              disableClose={disableClose}
               maximized={maximized}
               onMinimize={onMinimize}
               onMaximize={onMaximize}
@@ -79,6 +81,7 @@ const TitleBar = ({
               focused={focused}
               disableMaximize={disableMaximize}
               disableMinimize={disableMinimize}
+              disableClose={disableClose}
               maximized={maximized}
               onMinimize={onMinimize}
               onMaximize={onMaximize}

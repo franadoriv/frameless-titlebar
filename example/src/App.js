@@ -77,6 +77,12 @@ const selections = [
     label: 'Disable Maximize Button',
     type: 'toggle',
   }
+  ,
+  {
+    option: 'disableClose',
+    label: 'Disable Close Button',
+    type: 'toggle',
+  }
 ]
 
 const useStyles = makeStyles((theme) => ({
@@ -104,6 +110,7 @@ const App = ({ theme, setPalette }) => {
     showCustom: true,
     disableMinimize: false,
     disableMaximize: false,
+    disableClose:false,
   })
 
   const currentTheme = {
@@ -189,6 +196,7 @@ const App = ({ theme, setPalette }) => {
         title={state.showTitle && 'example-app'}
         disableMaximize={state.disableMaximize}
         disableMinimize={state.disableMinimize}
+        disableClose={state.disableClose}
         maximized={state.maximized}
         onClose={() => { enqueueSnackbar('close clicked', { variant: 'error' }) }}
         onMinimize={() => { enqueueSnackbar('minimized clicked', { variant: 'success' }) }}

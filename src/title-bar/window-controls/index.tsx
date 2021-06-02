@@ -31,6 +31,7 @@ const WindowControls = ({
   maximized,
   disableMinimize,
   disableMaximize,
+  disableClose,
   focused
 }: WindowControlsProps) => {
   const {
@@ -40,7 +41,7 @@ const WindowControls = ({
   } = useContext(ThemeContext);
   const isWin = platform === 'win32';
   const itemWidth = isWin ? 48 : 40;
-  const width = itemWidth * (3 - (disableMaximize ? 1 : 0) - (disableMinimize ? 1 : 0));
+  const width = itemWidth * (3 - (disableMaximize ? 1 : 0) - (disableMinimize ? 1 : 0) - (disableClose ? 1 : 0));
   return (
     <div
       className={styles.ControlsWrapper}
@@ -51,7 +52,7 @@ const WindowControls = ({
     >
       {
         buttons(isWin, maximized ?? false, onMinimize!, onMaximize!, onClose!)
-          .filter(x => !(disableMaximize && x.type == 'maximize' || disableMinimize && x.type == 'minimize'))
+          .filter(x => !(disableMaximize && x.type == 'maximize' || disableMinimize && x.type == 'minimize') || disableClose && x.type == 'close'))
           .map((b) => {
             return (
               <WindowButton
